@@ -16,7 +16,7 @@ public class Main {
 
         Swarm swarm = new Swarm();
 
-        String useDB = System.getProperty("swarm.use.db", "h2");
+        String useDB = swarm.configView().resolve("swarm.use.db").withDefault("h2").getValue();
 
         // Configure the Datasources subsystem with a driver
         // and a datasource
